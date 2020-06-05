@@ -1,10 +1,9 @@
-class ArticlesController < ApplicationController
+# frozen_string_literal: true
 
-  def new
-  end
+class ArticlesController < ApplicationController
+  def new; end
 
   def create
     render plain: params[:article].inspect
   end
-
 end
