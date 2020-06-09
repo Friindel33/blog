@@ -1,3 +1,9 @@
+*= require bootstrap
+
+*= require_tree .
+
+*= require_self
+
 .field_with_errors input{
   border-color: red;
   background-color: #f7d0d0;
