@@ -1,19 +1,18 @@
-<h1 class="header">List of articles</h1>
+<h1 class="header">List of articles <%= link_to 'Create new article', new_article_path %></h1>
 
 <% @articles.each do |article| %>
-
-  <div class="container">
-    <div class="card">
-      <div class="card-header">
-        <%= article.title %>
-      </div>
-      <div class="card-body">
-        <p class="card-text-prev"><%= article.text %></p>
-        <%= link_to 'Show', article_path(article) %> |
-        <%= link_to 'Edit', edit_article_path(article) %> |
-        <%= link_to "Delete", article, method: :delete, data: {confirm: "Do You really want to delete this article?"} %>
-        <footer class="footer">Created at: <%= article.created_at %> | Updated at: <%= article.updated_at %></footer>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <b><%= article.title %></b>
+        </div>
+        <div class="card-body">
+          <p class="card-text-prev"><%= article.text %></p>
+          <%= link_to 'Show', article_path(article) %> |
+          <%= link_to 'Edit', edit_article_path(article) %> |
+          <%= link_to 'Delete', article, method: :delete, data: {confirm: 'Do You really want to delete this article?'} %>
+          <footer class="footer">Created at: <%= article.created_at %> | Updated at: <%= article.updated_at %></footer>
+        </div>
       </div>
     </div>
-  </div>
 <% end %>
