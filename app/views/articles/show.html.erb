@@ -1,8 +1,7 @@
 <div class="container">
   <div class="card">
     <div class="card-header">
-
-      <%= @article.title %>
+      <b><%= @article.title %></b>
     </div>
     <div class="card-body">
       <p class="card-text"><%= @article.text %></p>
@@ -11,8 +10,33 @@
       <%= link_to "Back to the list", articles_path %>
       <footer class="footer">Created at: <%= @article.created_at %> | Updated at: <%= @article.updated_at %></footer>
     </div>
+  </div>
+</div>
+    <br />
     <div class="container">
-      <h4>New Comment</h4>
+      <div class="card">
+    <h2 class="header">Comments</h2>
+      <table class="table table-sm table-striped">
+        <thead>
+          <tr>
+            <th>Author</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+      <tbody>
+        <% @article.comments.each do |c| %>
+        <tr>
+          <td><%= c.author %></td>
+          <td><%= c.body %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br />
+    <div class="container">
+      <h6>New Comment</h6>
         <%= form_for([@article, @article.comments.build]) do |f| %>
         <p>
           <%= f.label :author %><br />
@@ -22,7 +46,8 @@
           <%= f.label :body %><br />
           <%= f.text_area :body %>
         </p>
+        <p>
+          <%= f.submit %>
+        </p>
         <% end %>
     </div>
-  </div>
-</div>
