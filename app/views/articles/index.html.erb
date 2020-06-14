@@ -1,5 +1,18 @@
 <h1 class="header">List of articles <%= link_to 'Create new article', new_article_path %></h1>
 
+  <div class="container">
+    <%= form_tag articles_path, class: 'navbar-form navbar-left', role: 'search', method: :get do |f| %>
+      <div class="form-group">
+        <%= text_field_tag :g, params[:q], class: 'form-control' %>
+      </div>
+    <%= button_tag "Search", class: 'btn btn-default', name:nil %>
+    <% end %>
+  </div>
+
+<br>
+  <%= render @articles_search %>
+<br>
+
 <% @articles.each do |article| %>
     <div class="container">
       <div class="card">

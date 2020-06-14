@@ -5,13 +5,16 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @articles = Article.all
     @article = Article.find(params[:id])
   end
 
   def new
+    @articles = Article.all
   end
 
   def create
+    @articles = Article.all
     @article = Article.new(article_params)
     if @article.save
       redirect_to @article
@@ -21,6 +24,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @articles = Article.all
     @article = Article.find(params[:id])
   end
 
