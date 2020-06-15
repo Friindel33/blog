@@ -57,3 +57,6 @@ input[type=submit]:hover {
   text-overflow: ellipsis;
   width: 90%;
 }
+.sign_in{
+  padding: 5px;
+}
