@@ -1,5 +1,4 @@
-<div class="container">
-  <div class="card">
+<div class="card">
     <div class="card-header">
       <b><%= @article.title %></b>
     </div>
@@ -11,9 +10,7 @@
       <footer class="footer">Created at: <%= @article.created_at %> | Updated at: <%= @article.updated_at %></footer>
     </div>
   </div>
-</div>
     <br />
-    <div class="container">
       <div class="card">
     <h2 class="header">Comments</h2>
       <table class="table table-sm table-striped">
@@ -33,9 +30,7 @@
       </tbody>
     </table>
   </div>
-</div>
 <br />
-    <div class="container">
       <h6>New Comment</h6>
         <%= form_for([@article, @article.comments.build]) do |f| %>
         <p>
@@ -50,4 +45,3 @@
           <%= f.submit %>
         </p>
         <% end %>
-    </div>

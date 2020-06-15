@@ -25,16 +25,6 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Most Commented Article</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          List of Articles
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <% @articles.each do |f| %>
-          <a class="dropdown-item" href="/articles/<%= f.id %>"><%= f.title %></a>
-          <% end %>
-        </div>
-      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
@@ -42,6 +32,12 @@
     </form>
   </div>
 </nav>
+  <div class="container">
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
+    </div>
   </body>
 </html>

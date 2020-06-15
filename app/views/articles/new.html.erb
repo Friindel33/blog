@@ -5,7 +5,6 @@
     <title class="header">New Article</title>
   </head>
   <body>
-    <div class="container">
       <h1>New Article</h1>
         <%= form_for :article, url: '/articles' do |f| %>
           <p>
@@ -20,6 +19,5 @@
             <%= f.submit %>
           </p>
         <% end %>
-    </div>
   </body>
 </html>
