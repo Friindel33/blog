@@ -3,12 +3,12 @@
 <%= form_for :article, url: article_path(@article), method: :put do |f| %>
   <p>
       <%= f.label :title %><br />
-      <%= f.text_field :title %>
+      <%= f.text_field :title, style: 'width:100%;' %>
   </p>
 
   <p>
       <%= f.label :text %><br />
-      <%= f.text_area :text %>
+      <%= f.text_area :text, :rows => 10, style: 'width:100%;' %>
   </p>
 
   <p>

@@ -12,8 +12,8 @@ div.error_explanation {
   color: #940b0b;
 }
 
-input[type=text], select, textarea {
-width: 95%;
+input[type=text], select, textarea, {
+width: 100%;
 padding: 12px;
 border: 1px solid #696969;
 border-radius: 2px;
@@ -21,7 +21,6 @@ box-sizing: border-box;
 margin-top: 6px;
 margin-bottom: 16px;
 resize: vertical;
-max-height: 30px
 }
 
 input[type=submit] {
@@ -37,12 +36,6 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 5px;
-  width: 60%;
-}
 .footer{
   text-decoration-color: #ccc;
   font-size: 9px;
@@ -59,12 +52,5 @@ input[type=submit]:hover {
   width: 90%;
 }
 .sign_in{
-  padding: 5px;
-}
-.new_user {
-  position: relative;
-  padding-bottom: 20px;
-}
-.field {
-  max-width: 192px;
+  padding: 10px;
 }

@@ -1,47 +1,54 @@
-<div class="card">
-    <div class="card-header">
-      <b><%= @article.title %></b>
-    </div>
-    <div class="card-body">
-      <p class="card-text"><%= @article.text %></p>
-      <%= link_to 'Edit', edit_article_path(@article) %> |
-      <%= link_to "Delete", @article, method: :delete, data: {confirm: "Do You really want to delete this article?"} %> |
-      <%= link_to "Back to the list", articles_path %>
-      <footer class="footer">Created at: <%= @article.created_at %> | Updated at: <%= @article.updated_at %></footer>
-    </div>
+<div class="conteiner">
+  <div class="card-header">
+    <b><%= @article.title %></b>
   </div>
+  <div class="card-body">
+    <p class="card-text"><%= @article.text %></p>
+    <%= link_to 'Edit', edit_article_path(@article) %> |
+    <%= link_to "Delete", @article, method: :delete, data: {confirm: "Do You really want to delete this article?"} %> |
+    <%= link_to "Back to the list", articles_path %>
+    <footer class="footer">Created at: <%= @article.created_at %> | Updated at: <%= @article.updated_at %></footer>
+  </div>
+</div>
     <br />
-      <div class="card">
-    <h2 class="header">Comments</h2>
-      <table class="table table-sm table-striped">
-        <thead>
+    <div class="conteiner">
+  <div class="row">
+      <div class="col">
+      <h2 class="header">Comments</h2>
+        <table class="table table-sm table-striped">
+          <thead>
+            <tr>
+              <th>Author</th>
+              <th>Comment</th>
+            </tr>
+          </thead>
+        <tbody>
+          <% @article.comments.each do |c| %>
           <tr>
-            <th>Author</th>
-            <th>Comment</th>
+            <td><%= c.author %></td>
+            <td><%= c.body %></td>
           </tr>
-        </thead>
-      <tbody>
-        <% @article.comments.each do |c| %>
-        <tr>
-          <td><%= c.author %></td>
-          <td><%= c.body %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-<br />
-      <h6>New Comment</h6>
-        <%= form_for([@article, @article.comments.build]) do |f| %>
-        <p>
-          <%= f.label :author %><br />
-          <%= f.text_field :author %>
-        </p>
-        <p>
-          <%= f.label :body %><br />
-          <%= f.text_area :body %>
-        </p>
-        <p>
-          <%= f.submit %>
-        </p>
-        <% end %>
+  </div>
+      <br />
+    <div class="conteiner">
+      <div class="row">
+        <div class="col-lg">
+          <h6>Hello, <b><%= current_user.username %></b>. Please leave your comment bellow</h6>
+          <%= form_for([@article, @article.comments.build]) do |f| %>
+            <br />
+          <p>
+            <%= f.label :Comment %><br />
+            <%= f.text_area :body, style: 'width:100%;' %>
+          </p>
+          <p>
+            <%= f.submit %>
+          </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
