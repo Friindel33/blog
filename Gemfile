@@ -9,6 +9,7 @@ gem 'bootstrap-sass'
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 gem 'devise'
+gem 'ransack'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server

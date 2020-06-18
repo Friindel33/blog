@@ -1,14 +1,8 @@
 <div class="conteiner">
   <div class="row">
-    <div class="col"><h3><%= link_to 'Create new article', new_article_path %></h3></div>
-  </div>
-</div>
-<br />
-<div class="conteiner">
-  <div class="row">
       <% @articles.each do |article| %>
             <div class="card">
-              <div class="card-header">
+              <div class="card-header" style="background-color: #e3f2fd;">
                 <b><%= article.title %></b>
               </div>
               <div class="card-body">

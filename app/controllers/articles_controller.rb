@@ -3,7 +3,14 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create]
 
   def index
-    @articles = Article.all
+    @q = Article.ransack(params[:q])
+    @articles = @q.result(distinct: true)
+  end
+
+  before_action :set_search
+
+  def set_search
+    @q=Article.search(params[:q])
   end
 
   def show
