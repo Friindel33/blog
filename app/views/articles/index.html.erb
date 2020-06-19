@@ -7,10 +7,11 @@
               </div>
               <div class="card-body">
                 <p class="card-text-prev"><%= article.text %></p>
-                <%= link_to 'Show', article_path(article) %> |
+                <%= link_to 'Show', article_path(article) %>
+                <% if user_signed_in?  && current_user.username == article.author %> |
                 <%= link_to 'Edit', edit_article_path(article) %> |
-                <%= link_to 'Delete', article, method: :delete, data: {confirm: 'Do You really want to delete this article?'} %>
-                <footer class="footer">Created at: <%= article.created_at %> | Updated at: <%= article.updated_at %></footer>
+                <%= link_to 'Delete', article, method: :delete, data: {confirm: 'Do You really want to delete this article?'} %><% end %>
+                <footer class="footer">Created at: <%= article.created_at %> | Updated at: <%= article.updated_at %> | Author: <%= article.author %></footer>
               </div>
             </div>
       <% end %>

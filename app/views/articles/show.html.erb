@@ -4,10 +4,11 @@
   </div>
   <div class="card-body">
     <p class="card-text"><%= @article.text %></p>
+    <% if user_signed_in?   && current_user.username == @article.author%>
     <%= link_to 'Edit', edit_article_path(@article) %> |
-    <%= link_to "Delete", @article, method: :delete, data: {confirm: "Do You really want to delete this article?"} %> |
+    <%= link_to "Delete", @article, method: :delete, data: {confirm: "Do You really want to delete this article?"} %> |<% end %>
     <%= link_to "Back to the list", articles_path %>
-    <footer class="footer">Created at: <%= @article.created_at %> | Updated at: <%= @article.updated_at %></footer>
+    <footer class="footer">Created at: <%= @article.created_at %> | Updated at: <%= @article.updated_at %> | Author: <%= @article.author %></footer>
   </div>
 </div>
     <br />
@@ -38,16 +39,19 @@
     <div class="conteiner">
       <div class="row">
         <div class="col-lg">
+          <% if user_signed_in? %>
           <h6>Hello, <b><%= current_user.username %></b>. Please leave your comment bellow</h6>
-          <%= form_for([@article, @article.comments.build]) do |f| %>
-            <br />
-          <p><br />
+            <%= form_for([@article, @article.comments.build]) do |f| %>
+              <br />
+              <%= f.hidden_field :author, value: current_user.username %>
+              <p><br />
             <%= f.text_area :body, style: 'width:100%;' %>
+              </p>
+                <p>
+                <%= f.submit :Comment, class: 'btn btn-success my-2 my-lg-0'  %>
+              <% end %>
+            <% end %>
           </p>
-          <p>
-            <%= f.submit :Comment, class: 'btn btn-success my-2 my-lg-0'  %>
-          </p>
-          <% end %>
         </div>
       </div>
     </div>
