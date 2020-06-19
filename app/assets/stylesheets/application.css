@@ -24,10 +24,6 @@ margin-bottom: 16px;
 resize: vertical;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
 .footer{
   text-decoration-color: #ccc;
   font-size: 9px;
