@@ -22,7 +22,7 @@
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
-
+/rails-vev-box/*
 # Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
