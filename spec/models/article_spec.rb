@@ -19,6 +19,11 @@ describe Article do
     end
   end
 
+  describe "length" do
+    it { should validate_length_of(:title).is_at_most(140) }
+    it { should validate_length_of(:text).is_at_most(4000) }
+  end
+
   describe "#last_comment" do
     it "returns last comment" do
       # creating article but with comments
