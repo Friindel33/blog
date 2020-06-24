@@ -18,4 +18,13 @@ describe Article do
       expect(article.subject).to eq 'Lorum Ipsum'
     end
   end
+
+  describe "#last_comment" do
+    it "returns last comment" do
+      # creating article but with comments
+      article = create(:article_with_comments)
+      # check
+      expect(article.last_comment.body).to eq "comment body 3"
+    end
+  end
 end
