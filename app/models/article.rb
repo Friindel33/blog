@@ -8,6 +8,6 @@ class Article < ApplicationRecord
   end
 
   def last_comment
-    comments.last_comment
+    comments.last
   end
 end
