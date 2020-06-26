@@ -45,7 +45,7 @@
               <br />
               <%= f.hidden_field :author, value: current_user.username %>
               <p><br />
-            <%= f.text_area :body, style: 'width:100%;' %>
+            <%= f.text_area :body, :rows => 3, style: 'width:50%;' %>
               </p>
                 <p>
                 <%= f.submit :Comment, class: 'btn btn-success my-2 my-lg-0'  %>
