@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   before_action :set_search
 
   def set_search
-    @q=Article.search(params[:q])
+    @q=Article.ransack(params[:q])
   end
 
   def show
