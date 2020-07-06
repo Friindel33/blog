@@ -10,6 +10,7 @@ gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 gem 'devise'
 gem 'ransack'
+gem 'inline_svg'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
