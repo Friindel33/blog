@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<%= button_to 'Upload New Photo', new_photo_path, class: 'btn btn-primary', :width => '100%', method: :get %><br />
+<% @photos.each do |photo| %>
+      <div class="card">
+        <div class="card-header" style="background-color: #e3f2fd;">
+          <b><%= photo.title %></b>
+        </div>
+        <div class="card-body">
+          <p class="card-text-prev"><%= image_tag photo.image_url %></p>
+          <%= link_to 'Show', photo %> |
+          <%= link_to 'Edit', edit_photo_path(photo) %> |
+          <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <footer class="footer">Created at: <%= photo.created_at %> | Updated at: <%= photo.updated_at %></footer>
+        </div>
+      </div>
+          <br />
+<% end %>
